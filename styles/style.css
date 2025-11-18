@@ -22,7 +22,7 @@
   gap: 20px;
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
-  margin: 100px auto ;
+  margin: 100px auto;
   font-family: var(--font-accent, PressStart2P), sans-serif;
   font-weight: var(--base-weight, 400);
   border: var(--border, 1px solid #000);
@@ -116,6 +116,7 @@ header::before {
   (text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5))) or
     (-webkit-text-stroke: 1px #000000)
 ) {
+
   .img-text {
     -webkit-text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
     text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
@@ -158,16 +159,60 @@ header::before {
 .like-button,
 .save-button,
 .button__close-dialog {
+  position: relative;
   padding: 12.5px 37px;
   background-color: var(--bg-color, #fff);
-  border: var(--border, 2px solid #000);
+  border: var(--border, 1px solid #000);
   font-family: var(--font-accent, PressStart2P), sans-serif;
   font-size: 14px;
   font-weight: var(--base-weight, 400);
   line-height: 0.9;
 }
 
-.button__text:has(.like-button) {
+.like-button:focus,
+.save-button:focus,
+.button__close-dialog:focus {
+  outline: none;
+}
+
+.like-button:focus-visible,
+.save-button:focus-visible,
+.button__close-dialog:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--accent-color, #000);
+  transition: box-shadow 0.3s ease;
+}
+
+.button__text,
+.save-button__text,
+.save-icon{
+  color: var(--hover-button-text-color, #fff);
+  fill: var(--hover-button-text-color, #fff);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
+}
+
+.like-button::after,
+.save-button::after,
+.button__close-dialog::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  block-size: 100%;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+  background-color: var(--accent-color, #000);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.like-button:hover::after,
+.save-button:hover::after,
+.button__close-dialog:hover::after {
+  transform: scaleX(1);
+}
+
+.card__button:has(.like-button) {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -189,7 +234,7 @@ header::before {
   margin-block-start: 50px;
 }
 
-.button__text:has(.save-button) {
+.dialog__button:has(.save-button) {
   margin: auto;
 }
 
@@ -245,6 +290,7 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
+
   .card {
     inline-size: 100%;
   }
