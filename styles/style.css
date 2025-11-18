@@ -12,18 +12,20 @@
 
 .header {
   display: flex;
+}
+
+.header__window {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
-  margin: 100px
-          clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem)
-          clamp(0rem, -2.2007rem + 9.3897vw, 6.25rem);
+  margin: 100px auto ;
   font-family: var(--font-accent, PressStart2P), sans-serif;
   font-weight: var(--base-weight, 400);
-  border: var(--border, 2px solid #000);
+  border: var(--border, 1px solid #000);
   background-color: #fff;
 }
 
@@ -34,10 +36,20 @@ header::before {
   inset: 0;
   z-index: -1;
   background-image:
-    repeating-linear-gradient(90deg, #D3D3D3 0, #D3D3D3 2px,
-                                      transparent 2px, transparent 4px),
-    repeating-linear-gradient(0deg, #D3D3D3 0, #D3D3D3 2px,
-                                      transparent 2px, transparent 4px),
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   background-size: cover;
 }
@@ -56,7 +68,6 @@ header::before {
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  margin-block-start: 100px;
 }
 
 .card {
@@ -64,7 +75,7 @@ header::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  outline: var(--border, 2px solid #000);
+  border: var(--border, 1px solid #000);
   background-color: var(--bg-color, #fff);
 }
 
@@ -73,7 +84,7 @@ header::before {
   font-size: 18px;
   line-height: 22px;
   font-variation-settings: 'wght' var(--heading-weight, 700);
-  border: var(--border, 2px solid #000);
+  border: var(--border, 1px solid #000);
 }
 
 .card__text {
@@ -101,9 +112,10 @@ header::before {
   mix-blend-mode: hard-light;
 }
 
-@supports((text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5))) or
-          (-webkit-text-stroke: 1px #000000)) {
-
+@supports (
+  (text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5))) or
+    (-webkit-text-stroke: 1px #000000)
+) {
   .img-text {
     -webkit-text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
     text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
@@ -116,7 +128,7 @@ header::before {
 }
 
 .second-image {
-  filter: blur(5px);
+  filter: blur(3px);
 }
 
 .third-image {
@@ -197,8 +209,8 @@ header::before {
 dialog {
   display: grid;
   grid-template-areas:
-  'icon text'
-  'button button';
+    'icon text'
+    'button button';
   place-items: center;
   row-gap: 30px;
   column-gap: 20px;
@@ -233,7 +245,6 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-
   .card {
     inline-size: 100%;
   }
