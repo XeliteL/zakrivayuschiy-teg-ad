@@ -116,7 +116,6 @@ header::before {
   (text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5))) or
     (-webkit-text-stroke: 1px #000000)
 ) {
-
   .img-text {
     -webkit-text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
     text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
@@ -156,13 +155,18 @@ header::before {
   margin-block-end: 27px;
 }
 
+.like-button {
+  block-size: 100%;
+}
+
 .like-button,
 .save-button,
 .button__close-dialog {
   position: relative;
   padding: 12.5px 37px;
   background-color: var(--bg-color, #fff);
-  border: var(--border, 1px solid #000);
+  border: none;
+  outline: var(--border, 1px solid #000);
   font-family: var(--font-accent, PressStart2P), sans-serif;
   font-size: 14px;
   font-weight: var(--base-weight, 400);
@@ -184,7 +188,7 @@ header::before {
 
 .button__text,
 .save-button__text,
-.save-icon{
+.save-icon {
   color: var(--hover-button-text-color, #fff);
   fill: var(--hover-button-text-color, #fff);
   mix-blend-mode: difference;
@@ -195,7 +199,7 @@ header::before {
 .like-button::after,
 .save-button::after,
 .button__close-dialog::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   block-size: 100%;
@@ -220,9 +224,19 @@ header::before {
   margin: 0 25px 25px 0;
 }
 
-.like-icon {
-  inline-size: 27px;
-  block-size: 24px;
+.button__like-icon {
+  border: none;
+  background-color: transparent;
+  transition: border 0.3s ease;
+  padding: 0;
+}
+
+.button__like-icon:focus {
+  outline: none;
+}
+
+.button__like-icon:focus-visible {
+  outline: var(--border, 1px solid #000);
 }
 
 .like-button {
@@ -290,7 +304,6 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-
   .card {
     inline-size: 100%;
   }
