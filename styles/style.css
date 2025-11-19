@@ -157,7 +157,7 @@ header::before {
 
 .card__like-button {
   inline-size: 130px;
-  block-size: 100%;
+  block-size: 38px;
 }
 
 .card__like-button,
@@ -233,10 +233,6 @@ header::before {
 
 .card__icon-button:focus-visible {
   outline: var(--border, 1px solid #000);
-}
-
-.card__like-button {
-  block-size: 38px;
 }
 
 .save {
