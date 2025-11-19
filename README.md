@@ -1,1 +1,1 @@
-https://github.com/XeliteL/zakrivayuschiy-teg-ad
+https://xelitel.github.io/zakrivayuschiy-teg-ad/
