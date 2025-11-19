@@ -1,5 +1,4 @@
 @keyframes liked_scale {
-
   from {
     scale: 1;
   }
@@ -10,7 +9,6 @@
 }
 
 @keyframes sparkles {
-
   0% {
     opacity: 0;
   }

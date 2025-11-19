@@ -116,7 +116,6 @@ header::before {
   (text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5))) or
     (-webkit-text-stroke: 1px #000000)
 ) {
-
   .img-text {
     -webkit-text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
     text-stroke: 1px var(--text-stroke-color, rgb(255 255 255 / 0.5));
@@ -301,7 +300,6 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-
   .card {
     inline-size: 100%;
   }
