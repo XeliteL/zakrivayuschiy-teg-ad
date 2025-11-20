@@ -559,7 +559,7 @@
             type="button"
             class="save-button"
             onclick="window['save-dialog'].showModal()"
-            aria-controls="save-dialog"
+            data-dialog-open
           >
             <span class="save-button__text">
               <svg class="save-icon">
@@ -581,7 +581,7 @@
           <button
             type="button"
             class="button__close-dialog"
-            onclick="window['save-dialog'].close()"
+            data-dialog-close
           >
             <span class="button__text">OK</span>
           </button>
